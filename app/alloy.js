@@ -9,3 +9,13 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+function handleIntent(intent) {
+    // Handle the intent here.
+    var DEEPLINK=intent.data;
+    Ti.API.error("HANDLING DEEPLINK INTENT:"+DEEPLINK);
+    if (intent.data && intent.data.indexOf("deep-link") !== -1) {
+        Ti.API.error("GOT DEEPLINK INTENT WE WANTED...:"+DEEPLINK);
+    }
+}
+Ti.Android.rootActivity.addEventListener("newintent", handleIntent);
+handleIntent(Ti.Android.rootActivity.intent);
