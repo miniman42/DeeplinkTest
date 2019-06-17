@@ -42,25 +42,18 @@
       </dict>
     </plist>
   </ios>
-  <android 
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest 
-      xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
-      <application android:icon="@drawable/appicon" android:label="newapp" android:name="NewappApplication" android:debuggable="false" android:usesCleartextTraffic="true" android:theme="@style/Theme.AppCompat" android:resizeableActivity="true">
-        <activity android:name=".NewappActivity" android:label="@string/app_name" android:theme="@style/Theme.Titanium" android:alwaysRetainTaskState="true" android:configChanges="keyboardHidden|orientation|fontScale|screenSize|smallestScreenSize|screenLayout|density">
-          <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-          </intent-filter>
-          <intent-filter>
-            <action android:name="android.intent.action.VIEW"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <category android:name="android.intent.category.BROWSABLE"/>
-            <data android:host="deep-link" scheme="newapp"/>
-          </intent-filter>
-        </activity>
-      </application>
-    </manifest>
+  <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1"/>
+    <activities>
+      <activity android:exported="true" url="ActivityDeepLink.js">
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW"/>
+          <category android:name="android.intent.category.DEFAULT"/>
+          <category android:name="android.intent.category.BROWSABLE"/>
+          <data android:host="deep-link" scheme="newapp"/>
+        </intent-filter>
+      </activity>
+    </activities>
   </android>
   <modules/>
   <deployment-targets>
