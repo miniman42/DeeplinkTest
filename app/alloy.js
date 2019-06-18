@@ -17,5 +17,7 @@ function handleIntent(intent) {
         Ti.API.error("GOT DEEPLINK INTENT WE WANTED...:"+DEEPLINK);
     }
 }
-Ti.Android.rootActivity.addEventListener("newintent", handleIntent);
+Ti.Android.rootActivity.addEventListener("newintent", function(e) {
+    handleIntent(e.intent);
+});
 handleIntent(Ti.Android.rootActivity.intent);
