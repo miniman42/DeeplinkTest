@@ -8,8 +8,8 @@
 	color: "#000"
 }
 
-"#label": {
+".label": {
 	font: {
-		fontSize: 14
+		fontSize: 16
 	}
 }

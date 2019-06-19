@@ -4,12 +4,12 @@
 
 "Label": {
 	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
+	height: "33%",
 	color: "#FFF"
 }
 
 "#label": {
 	font: {
-		fontSize: 14
+		fontSize: 16
 	}
 }
